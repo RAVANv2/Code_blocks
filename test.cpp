@@ -3,8 +3,12 @@ using namespace std;
 
 int main()
 {
-  int n=4;
-  cout<<n<<endl;
-  n=n-n>>2;
-  cout<<n;
+  char ch[] = "abc";
+  char ch2[] = "bcd";
+  set<string> s;
+  s.insert(ch);
+  s.insert(ch2);
+
+  for(auto i:s)
+    cout<<i<<endl;
 }
