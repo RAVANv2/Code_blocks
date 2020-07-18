@@ -1,14 +1,15 @@
-#include<bits/stdc++.h>
+// C++ program for solution of
+// friends pairing problem
+#include <bits/stdc++.h>
 using namespace std;
+
+int fun(int cnt)
+{
+  return ++cnt;
+}
 
 int main()
 {
-  char ch[] = "abc";
-  char ch2[] = "bcd";
-  set<string> s;
-  s.insert(ch);
-  s.insert(ch2);
-
-  for(auto i:s)
-    cout<<i<<endl;
+  int ans = fun(0);
+  cout<<ans;
 }
