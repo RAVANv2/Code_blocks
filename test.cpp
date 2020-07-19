@@ -1,15 +1,21 @@
-// C++ program for solution of
-// friends pairing problem
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-
-int fun(int cnt)
-{
-  return ++cnt;
-}
 
 int main()
 {
-  int ans = fun(0);
-  cout<<ans;
+  int n;
+  cin>>n;
+
+  vector<int> v;
+  int ele;
+  for(int i=0;i<n;i++)
+  {
+    cin>>ele;
+    v.push_back(ele);
+  }
+
+  set<vector<int> > s;
+  s.insert(v);
+
+  cout<<s[0];
 }
