@@ -1,0 +1,68 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+bool student_read(int books[],int n,int stud,int mid)
+{
+	int page = 0;
+	int cnt = 0;
+
+	for(int i=0;i<n;i++)
+	{
+		if(page + books[i] >= mid)
+		{
+			page = books[i];
+			cnt++;
+			if(cnt==stud)
+				return true;
+		}
+		else
+			page += books[i];
+	}
+
+	return false;
+}
+
+int min_page(int books[],int n,int stud)
+{
+	// Best Case
+	int s = 0;
+	int e;
+	// Worst Case
+	for(int i=0;i<n;i++)
+		e += books[i];
+
+	int ans = -1;
+
+	while(s<=e)
+	{
+		int mid = (e+s)>>1;
+
+		bool acche_student = student_read(books,n,stud,mid);
+
+		cout<<acche_student<<endl;
+
+		if(acche_student)
+		{
+			ans = mid;
+			s = mid+1;
+		}
+		else
+			e = mid-1;
+	}
+
+	return ans;
+}
+
+int main(){
+
+	int num_book,student;
+	cin>>num_book>>student;
+
+	int book_arr[num_book];
+	for(int i=0;i<num_book;i++)
+		cin>>book_arr[i];
+
+	int ans = min_page(book_arr,num_book,student);
+
+	cout<<ans;
+}
