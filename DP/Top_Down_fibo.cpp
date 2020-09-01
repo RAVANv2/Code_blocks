@@ -18,9 +18,6 @@ int fibo(int n,int dp[])
 
 }
 
-
-
-
 int main()
 {
 	int n = 12;
