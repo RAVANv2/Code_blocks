@@ -46,7 +46,7 @@ def optimized_app(n,k): #Time complexity O(N)
 
 
 def main():
-	n = 6
+	n = 37
 	k = 3
 	dp = [0]*(n+1)
 	print(step_t_d(n,k,dp))
